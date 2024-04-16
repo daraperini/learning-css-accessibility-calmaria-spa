@@ -6,7 +6,11 @@ To see the final result, click [here](https://learning-css-accessibility-calmari
 
 ## Used tools:
 
+* HTML
 * CSS
+* WCAG Color contrast checker
+* Lighthouse
+* axe DevTools
 
 *(Alura is a Brazilian technology school and for acessibility reasons this code is in Portuguese)*
 
@@ -20,6 +24,9 @@ Para acessar o resultado final da página, clique [aqui](https://learning-css-ac
 
 ## Ferramentas utilizadas:
 
+* HTML
 * CSS
-
-
+* WCAG Color contrast checker
+* Lighthouse
+* axe DevTools
+ 
