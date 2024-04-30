@@ -1,6 +1,8 @@
 # Calmaria Spa
 
-Hello! This project was developed during Alura's classes *CSS: adjusting visual accessibility in a project* and *Accessibility in HTML: Writing Semantic Codes for Social Inclusion* and had the goal to refactor the project to make it more accessible. HTML and CSS codes were adjusted focusing on accessibility.
+Hello world! 
+
+This project was developed during Alura's degree *Accessibility and web technologies: techniques in HTML, CSS and JavaScript for inclusive projects* and had the goal to refactor the project to make it more accessible. Focusing on accessibility HTML was modified using semantic elements and acessibility tools were implemented. I also used visual resources in CSS to improve the project's accessibility. Now the JavaScript code is beeing refactorated with the goal to implement new functionalities acessible to the user.
 
 To see the final result, click [here](https://learning-css-accessibility-calmaria-spa.vercel.app/).
 
@@ -8,6 +10,7 @@ To see the final result, click [here](https://learning-css-accessibility-calmari
 
 * HTML
 * CSS
+* JavaScript
 * WCAG Color contrast checker
 * Lighthouse
 * axe DevTools
@@ -19,7 +22,9 @@ To see the final result, click [here](https://learning-css-accessibility-calmari
 
 # Calmaria Spa
 
-Olá! Esse projeto foi desenvolvido durante os cursos *CSS: ajustando a acessibilidade visual em um projeto* e *Acessibilidade no HTML: escrevendo códigos semânticos para inclusão*, da Alura e teve como objetivo a refatoração do projeto de forma a deixá-lo mais acessível. Com foco total na acessibilidade, os códigos HTML e CSS foi ajustado conforme necessidade.
+Olá mundo! 
+
+Esse projeto foi desenvolvido durante a formação *Acessibilidade e tecnologias web: técnicas em HTML, CSS e JavaScript para projetos inclusivos*, da Alura e teve como objetivo a refatoração do projeto de forma a deixá-lo mais acessível. Com foco total na acessibilidade, o HTML foi revisto e as modificações semânticas e de acessibilidade foram implementadas. No CSS, utilizei recursos visuais também com o objetivo de melhor a acessibilidade do projeto. O código JavaScript está sendo refatorado no momento com o objetivo de implementar novas funcionalidades acessíveis ao usuário.
 
 Para acessar o resultado final da página, clique [aqui](https://learning-css-accessibility-calmaria-spa.vercel.app/).
 
@@ -27,6 +32,7 @@ Para acessar o resultado final da página, clique [aqui](https://learning-css-ac
 
 * HTML
 * CSS
+* JavaScript
 * WCAG Color contrast checker
 * Lighthouse
 * axe DevTools
