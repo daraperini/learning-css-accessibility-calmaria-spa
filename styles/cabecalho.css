@@ -1,5 +1,4 @@
-
-.cabecalho {
+/* .cabecalho {
   background: var(--verde-claro);
 }
 
@@ -28,11 +27,13 @@
 
 .cabecalho .cabecalho__nav .cabecalho__nav--lista {
   display: inline-flex;
-  list-style: none;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
 }
 
 .cabecalho .cabecalho__nav .cabecalho__nav--lista a {
-  color: #0C0421;
+  color: #0c0421;
   margin: 0 2.1rem;
   text-decoration: none;
   font-weight: 400;
@@ -41,11 +42,74 @@
 
 .cabecalho .cabecalho__nav .cabecalho__nav--lista a:hover {
   font-weight: 600;
-  transition: .5s;
+  transition: 0.5s;
+}
+
+.submenu li a:hover {
+  font-weight: 700 !important;
+}
+
+.cabecalho__lista-item .icone {
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  color: var(--lilas-escuro);
+  font-size: 22px;
+  align-self: center;
+}
+
+seta submenu
+.cabecalho__lista-item .icone .active {
+  transform: rotate(180deg);
+  margin: 4px #000;
+}
+
+.cabecalho__nav--lista .submenu {
+  display: none;
+  position: absolute;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  padding: 16px;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: var(--cinza-claro);
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  min-width: 160px;
+  border-radius: 4px;
+  margin-top: 40px;
+  font-size: 22px;
+}
+
+.cabecalho__nav--lista .submenu .submenu {
+  left: 100%;
+  top: 10px;
+}
+
+.submenu li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  display: flex;
+  border-bottom: 2px solid #cad4fa;
+  margin: 8px 8px;
+  min-width: 170px;
+  height: 45px;
+}
+
+.submenu li:first-child {
+  margin-top: unset;
+}
+
+.submenu li:last-child {
+  margin-bottom: unset;
+  border-bottom: none;
 }
 
 @media screen and (min-width: 768px) {
-  /* Tablet */
+  Tablet
 
   .cabecalho__nav--logo {
     width: 27rem;
@@ -56,4 +120,26 @@
     font-size: 2.2rem;
   }
 
+  Estilo para a transição do ícone
+  .icone {
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    font-size: 32px;
+    outline: none;
+  }
 }
+
+@media screen and (min-width: 1440px) {
+  .cabecalho .cabecalho__nav {
+    flex-direction: column;
+  }
+
+  .botao-acordeao {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .cabecalho .cabecalho__nav .cabecalho__nav--lista {
+    gap: 40px;
+  }
+} */

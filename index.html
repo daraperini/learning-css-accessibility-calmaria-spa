@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/cabecalho.css">
     <link rel="stylesheet" href="./styles/container--primeiro.css">
@@ -25,13 +27,24 @@
 
     <header class="cabecalho">
         <nav class="cabecalho__nav">
-            <a href="#" aria-label="Página da Calmaria Spa ">
+            <a href="#" aria-label="Boas vindas ao Calmaria Spa ">
                 <img class="cabecalho__nav--logo" src="./assets/logo.png" alt="Logo do Calmaria Spa">
             </a>
             <span class="cabecalho__nav--line"></span>
-            <ul class="cabecalho__nav--lista">
-                <li class="cabecalho__lista-item"><a href="#container-espaco">Espaço</a></li>
-                <li class="cabecalho__lista-item"><a href="#container-servicos">Serviços</a></li>
+            <ul class="cabecalho__nav--lista" aria-label="Menu principal">
+                <li class="cabecalho__lista-item"><a href="/">Início</a></li>
+                <li class="cabecalho__lista-item">
+                    <!-- aria-hashpopup para denotar que o item tem um submenu -->
+                     <!-- aria-expended para indicar se o submenu está aberto ou fechado -->
+                    <a href="#" aria-hashpopup="true" aria-expanded="false">Nosso espaço</a>
+                    <span class="material-symbols-outlined icone" aria-hidden="true">stat_minus_1</span>
+                    <ul class="submenu">
+                        <li> <a href="/quem-somos.html">Nossa história</a></li>
+                        <li><a href="#">Localização</a></li>
+                        <li><a href="#">Equipe</a></li>
+                    </ul>
+                </li>
+                <li class="cabecalho__lista-item"><a href="#contato-servicos">Serviços</a></li>
                 <li class="cabecalho__lista-item"><a href="#contato-formulario">Contato</a></li>
             </ul>
         </nav>
@@ -104,58 +117,191 @@
                     novidades sobre nossos serviços.</p>
                 <form class="container__incricao--form-input">
                     <input id="inscricao" name="inscricao" type="email" placeholder="Digite seu email">
-                    <button type="submit">Inscrever</button>
+                    <button type="submit" onclick="alternarModal('ver-modal-inscrito', true)">Inscrever</button>
                 </form>
             </div>
+
+            <!-- Modal de formulário inscrito com sucesso -->
+            <div id="ver-modal-inscrito" class="modal-enviado" role="dialog" aria-labelledby="cabecalho-titulo-modal-enviado" aria-modal="true">
+                <div class="conteudo-modal-enviado">
+                    <div class="cabecalho-modal-enviado">
+                        <h2 id="cabecalho-titulo-modal-enviado" class="cabecalho-titulo-modal-enviado">
+                            Você foi inscrito com sucesso!
+                        </h2>
+                    <img class="cabecalho-icone-modal-enviado" src="./assets/icon-enviado.png" alt="" />
+                    <!-- Botão para fechar a janela modal 'ver-modal-inscrito -->
+                    <button class="btn-fechar" onclick="alternarModal('ver-modal-inscrito', false)" tabindex="0" aria-label="Fechar formulário enviado">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+
             <img class="container__incricao--mobile" src="./assets/mandala-inferior-mobile.svg" alt="">
             <img class="container__incricao--tablet" src="./assets/mandala-direita-tablet.svg" alt="">
         </section>
-
-        <section class="container__contato">
-            <div class="container__contato--img">
-                <img src="./assets/contato-img-1.png" alt="Homem em uma banheira com produtos de spa no rosto.">
-                <img src="./assets/contato-img-2.png" alt="Mulher em uma banheira olhando horizonte na janela.">
-                <img src="./assets/contato-img-3.png" alt="Mulher em uma banheira com pétalas de rosa, com apenas mãos e pernas aparentes, segurando um livro e com uma bandeija com uvas e chá.">
-            </div>
-            <form action="." id="contato-formulario" class="container__contato--form">
-                <div class="container__contato--form-conteudo">
-                    <h5 class="container__contato--form-conteudo-titulo">Entre em contato</h5>
-                    <p class="container__contato--form-conteudo-texto">Reserve seu horário, tire dúvidas ou proponha
-                        sugestões, nosso
-                        canal é aberto para
-                        você!</p>
-                </div>
-                <div class="container__contato--inputs">
-                    <label id="titulo-contato" for="container__contato--input-nome">Nome</label>
-                    <input type="text" id="container__contato--input-nome" name="nome" placeholder="Digite seu nome completo" required>
-                    <label for="container__contato--input-email">Email</label>
-                    <input type="email" id="container__contato--input-email" name="email" placeholder="Digite seu email" required>
-                    <label for="container__contato--input-email">Telefone</label>
-                    <input type="text" id="container__contato--input-telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
-                    <fieldset aria-labelledby="titulo-contato">
-                        <legend class="container__contato--inputs--titulo">Prefere contato por:</legend>
-                        <div class="container__contato--inputs--div">
-                            <div>
-                                <input type="radio" id="container__contato--inputs--opcoes-ligacao" name="contato">
-                                <label for="container__contato--inputs--opcoes-ligacao">Ligação</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="container__contato--inputs--opcoes-whatsapp" name="contato">
-                                <label for="container__contato--inputs--opcoes-whatsapp">WhatsApp</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="container__contato--inputs--opcoes-email" name="contato">
-                                <label for="container__contato--inputs--opcoes-email">Email</label>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <label for="container__contato--form--mensagem">Mensagem</label>
-                    <textarea type="text" id="container__contato--form--mensagem" name="container__contato--form--mensagem" placeholder="Digite sua mensagem" maxlength="500"></textarea>
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
     </main>
+
+     <!-- JavaScript -->
+  <section id="contato" role="region" aria-label="Seção de Contato">
+    <div class="imgs-contato">
+      <img src="./assets/contato-img-1.png" alt="" />
+      <img src="./assets/contato-img-2.png" alt="" />
+      <img src="./assets/contato-img-3.png" alt="" />
+    </div>
+
+    <div class="textos">
+      <h2 class="titulo">Converse com a gente!</h2>
+      <p class="infos">
+        Reserve seu horário, tire dúvidas e proponha sugestões!
+      </p>
+      <button class="btn-contato" aria-label="Clique para Entrar em contato" onclick="alternarModal('ver-modal-contato', true)">
+        Entrar em contato
+      </button>
+    </div>
+
+    <!-- Modal -->
+    <!-- Janela modal 'ver-modal-contato' -->
+    <section id="ver-modal-contato" class="modal" role="dialog" aria-labelledby="cabecalho-titulo-modal"
+      aria-modal="true">
+      <div class="conteudo-modal">
+        <div class="cabecalho-modal">
+          <h2 id="cabecalho-titulo-modal" class="cabecalho-titulo-modal">
+            Preencha seus dados:
+          </h2>
+          <!-- Botão para fechar a janela modal 'ver-modal-contato' -->
+          <button class="cabecalho-modal-fechar" aria-label="Botão para fechar o formulário" tabindex="0" onclick="alternarModal('ver-modal-contato', false)">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+        <div class="inputs-modal">
+          <p class="paragrafo-modal">
+            Quer marcar horário, enviar críticas ou sugestões? Preencha os
+            campos abaixo e deixe sua mensagem, que retornaremos em até 12h!
+          </p>
+
+          <label for="nome">Nome</label>
+          <input type="text" name="nome" id="nome" required placeholder="Digite seu nome completo"
+            aria-describedby="instrucoes-nome" />
+
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required placeholder="Digite seu e-mail"
+            aria-describedby="instrucoes-email" />
+
+          <label for="telefone">Telefone</label>
+          <input type="tel" name="telefone" id="telefone" required placeholder="(DDD) XXXXX-XXXX"
+            aria-describedby="instrucoes-telefone" />
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" required placeholder="Escreva sua mensagem"
+            aria-describedby="instrucoes-mensagem"></textarea>
+
+          <fieldset class="field-legend" aria-labelledby="tituloContato">
+            <legend>Prefere contato por:</legend>
+            <div class="inputs-modal-radio">
+              <div>
+                <input id="ligacao" type="radio" name="contato" required value="Ligação" role="radio"
+                  aria-labelledby="ligacao-label" />
+                <label class="inputs-modal-label" id="ligacao-label" for="ligacao">Ligação</label>
+              </div>
+              <div>
+                <input id="whatsapp" type="radio" name="contato" required value="Whatsapp" role="radio"
+                  aria-labelledby="whatsapp-label" />
+                <label class="inputs-modal-label" id="whatsapp-label" for="whatsapp">WhatsApp</label>
+              </div>
+              <div>
+                <input id="email-contato" type="radio" name="contato" required value="Email" role="radio"
+                  aria-labelledby="email-contato-label" />
+                <label class="inputs-modal-label" id="email-contato-label" for="email-contato">Email</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="rodape-modal">
+          <!-- Botão para fechar a janela modal 'ver-modal-contato' -->
+          <button class="btn-enviar" tabindex="0" onclick="alternarModal('ver-modal-contato', false), alternarModal('ver-modal-enviado', true)" >
+            Enviar
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal de formulário enviado contato -->
+    <section id="ver-modal-enviado" class="modal-enviado" role="dialog" aria-labelledby="cabecalho-titulo-modal-enviado"
+      aria-modal="true">
+      <div class="conteudo-modal-enviado">
+        <div class="cabecalho-modal-enviado">
+          <h2 id="cabecalho-titulo-modal-enviado" class="cabecalho-titulo-modal-enviado">
+            Mensagem enviada com sucesso!
+          </h2>
+          <img class="cabecalho-icone-modal-enviado" src="./assets/icon-enviado.png" alt="" />
+          <!-- Botão para fechar a janela modal 'ver-modal-enviado' contato-->
+          <button class="btn-fechar" tabindex="0" aria-label="Fechar formulário enviado" onclick="alternarModal('ver-modal-enviado', false)">
+            Fechar
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acordeao -->
+    <div class="acordeao">
+        <div class="acordeao-item" id="item1">
+          <button class="botao-acordeao" aria-expanded="false">
+            É necessário agendar com antecedência os tratamentos no spa?
+            <span class="material-symbols-outlined icone" aria-hidden="true">
+              arrow_drop_down
+            </span>
+          </button>
+          <div class="conteudo-acordeao" aria-hidden="true">
+            <div>
+              <p>
+                Recomendamos agendar com antecedência para garantir horário, mas
+                estamos abertos a atendimentos de última hora, sujeitos à
+                disponibilidade de agenda.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="acordeao-item" id="item2">
+          <button class="botao-acordeao" aria-expanded="false">
+            Crianças também são bem-vindas?
+            <span class="material-symbols-outlined icone" aria-hidden="true">
+              arrow_drop_down
+            </span>
+          </button>
+          <div class="conteudo-acordeao" aria-hidden="true">
+            <div>
+              <p>
+                Embora a maioria dos tratamentos seja projetada para adultos,
+                oferecemos opções adaptadas para crianças em alguns serviços.
+                Certifique-se de verificar nossa oferta específica para os
+                pequenos.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="acordeao-item" id="item3">
+          <button class="botao-acordeao" aria-expanded="false">
+            Qual é a política de cancelamento dos tratamentos no spa?
+            <span class="material-symbols-outlined icone" aria-hidden="true">
+              arrow_drop_down
+            </span>
+          </button>
+          <div class="conteudo-acordeao" aria-hidden="true">
+            <div>
+              <p>
+                Pedimos que nos avise com pelo menos 24 horas de antecedência
+                para cancelamentos. Isso nos permite ajustar nossa programação e
+                oferecer aos outros clientes a oportunidade de agendar nesse
+                horário.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer class="rodape">
         <address>     
@@ -168,7 +314,7 @@
          <small>Desenvolvido por Alura. Projeto fictício sem fins comerciais.</small>
         </address>
     </footer>
-
+    <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>
